@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     li {
+            list-style-type: none;
+        }
+        #logo {
+            float: left;
+        }
+        #menu {
+            float: right;
+            font-size: 14px;
+            margin-top: 20px;
+
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            padding: 0;
+        }
+        #menu_li {
+            display: inline;
+        }
+        .item {
+            margin: 0 20px 0 20px;
+        }
+        /* 기본 상태 + 링크 + 방문함 모두 동일하게 */
+#menu .item a,
+#menu .item a:link,
+#menu .item a:visited {
+    color: #343434;   /* 기본 텍스트 색 */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* hover만 색 변경 */
+#menu .item a:hover {
+    color: #979797; 
+}
+
+
+ /* 페이지 전체 컨테이너 */
+.page-container {
+    width: 100%;
+    padding-top: 40px; 
+}
+
+/* 메인 타이틀 중앙 정렬 */
+.main-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 60px; 
+    width: 100%;
+}
+
+/* 좌/우 영역 */
+.content-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* 좌는 왼쪽, 우는 오른쪽 */
+    align-items: flex-start;
+    padding: 0 80px; /* 전체 좌우 여백 */
+    box-sizing: border-box;
+}
+
+/* 왼쪽 패널 — 화면 절반 차지 */
+.left-panel {
+    width: 50%;   
+    min-height: 680px;
+    position: relative;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 이미지 크기: 패널 전체 가득 */
+.main-image {
+    width: 100%;
+    height: 700px; 
+    object-fit: cover;
+}
+
+/* 패널 위 배치된 GREEN/RED/YELLOW 텍스트 */
+.panel-labels {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.label {
+    font-size: 14px;
+    color: #444;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: opacity 0.3s;
+}
+
+.label:hover {
+    opacity: 0.4;
+}
+
+/* 오른쪽 텍스트 영역 */
+.right-text {
+    width: 40%;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+footer {
+        width: 100%;
+        height: 100px;
+        margin-top: 30px;
+        background-color: #2b292c;
+    }
+    #footer_box {
+        width: 1680px;
+        height: 100px;
+        margin: 10px;
+        /* border: solid 1px red; */
+    }
+    #footer_logo {
+        float: left;
+        margin: 30px 0 0 10px;
+        /* border: solid 1px red; */
+    }
+    #address {
+        float: right;
+        margin: 30px 30px 0 0;
+        color: white;
+        /* border: solid 1px red */;
+    }
+
+
+     @media (max-width: 600px) {
+
+    .page-container {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 80px;
+    }
+
+    .content-wrap {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .left-panel, 
+    .right-text {
+        width: 100%;
+    }
+
+    .panel-labels {
+        top: 10px;
+        left: 10px;
+        gap: 8px;
+    }
+
+    .panel-labels .label {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .right-text {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 900px) {
+    .page-container {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .content-wrap {
+        gap: 30px;
+    }
+}
+</style>
+<body>
+      <div id="logo">
+        <a href="index.html">
+        <img src="huee.png"></a>
+    </div>
+
+    <ul id="menu">
+        <li class="item"><a href="list.html">색감 좌표</a></li>
+        <li>l</li>
+        <li class="item"><a href="collection.html">감각의 채집</a></li>
+        <li>l</li>
+         <li class="item"><a href="record.html">온도의 기록</a></li>
+        <li>l</li>
+        <li class="item"><a href="palette.html">나만의 팔레트</a></li>
+        <li>l</li>
+        <li class="item"><a href="place.html">색채 공간</a></li>
+    </ul>
+
+    <div class="page-container">
+
+    <!-- 메인 타이틀 -->
+    <h1 class="main-title">온도의 기록</h1>
+
+    <div class="content-wrap">
+
+        <!-- Left Image Panel -->
+        <div class="left-panel">
+            <img src="bugundy.jpg" alt="이미지" class="main-image">
+
+            <!-- Top labels -->
+            <div class="panel-labels">
+                <a href="green.html" class="label">GREEN</a>
+                <a href="red.html" class="label">RED</a>
+                <a href="yellow.html" class="label">YELLOW</a>
+            </div>
+        </div>
+
+        <!-- Right Text Area -->
+        <div class="right-text">
+            <p>
+                <h2><b>Bugundy : #7F001B</b></h2><br>
+                <b>버건디 : 열정과 굳건함의 온도 (High Temperature)</b><br>
+                <p>&nbsp;</p>
+                버건디는 <b>'온전한 열정의 상징'</b>이라고 생각합니다. 원색의 레드가 가진 즉각적이고 폭발적인 에너지와 달리, 버건디는 시간을 두고 숙성된 깊고 단단한 에너지를 품고 있습니다. 
+                이 색은 단순히 화려하기보다는 깊고 지적인 매력을 발산하며, 보는 이에게 오랜 여운을 남깁니다.<br> <p>&nbsp;</p>
+
+                이 색이 지닌 무드는 <b>굳건함(Adamant)</b>입니다. 버건디는 우리 내면의 잠재된 단단한 마음과 주체적인 자신감을 일깨웁니다. 시각적으로 '높은 온도'를 전달하지만, 이는 섣부름이 아닌 
+                목표를 향한 확고한 의지와 깊은 성숙함을 내포하고 있습니다. 버건디를 통해 우리는 드라마틱한 감정의 깊이와 도전을 두려워하지 않는 용기를 얻게 됩니다.<br>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+  <footer>
+        <div id="footer_box">
+            <div id="footer_logo">
+                <img src="color logo2.png">
+            </div>
+
+            <ul id="address">
+                <li>TEL: 032-000-0000</li>
+                <li>Copyright ©<b>huee</b> All Rights Reserved.</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
