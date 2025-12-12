@@ -141,6 +141,7 @@ footer {
     .square img {
         width: 180px;
         height: 180px;
+        object-fit: cover;
     }
 
     .right-box {
@@ -158,25 +159,24 @@ footer {
     }
 
     .row {
-        flex-direction: column;     /* 모바일에서는 세로 정렬 */
-        align-items: flex-start;
         gap: 24px;
     }
 
     .left-box {
         width: 100%;
         justify-content: space-between; 
+        flex-direction: row;
         gap: 14px;
     }
 
     .square img {
         width: calc(50% - 7px);     
         height: auto;
-        aspect-ratio: 1/1;          
+        aspect-ratio: 1/1;
+        object-fit: cover;
     }
 
     .right-box {
-        max-width: 100%;
         font-size: 14px;
         line-height: 1.5;
     }
@@ -350,3 +350,4 @@ footer {
 </body>
 
 </html>
+
