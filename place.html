@@ -141,6 +141,7 @@ footer {
     .square img {
         width: 180px;
         height: 180px;
+        object-fit: cover;
     }
 
     .right-box {
@@ -158,8 +159,6 @@ footer {
     }
 
     .row {
-        flex-direction: column;     /* 모바일에서는 세로 정렬 */
-        align-items: flex-start;
         gap: 24px;
     }
 
@@ -167,16 +166,18 @@ footer {
         width: 100%;
         justify-content: space-between; 
         gap: 14px;
+        flex-direction: row;
     }
 
     .square img {
         width: calc(50% - 7px);     
         height: auto;
-        aspect-ratio: 1/1;          
+        aspect-ratio: 1/1;
+        object-fit: cover;
     }
 
     .right-box {
-        max-width: 100%;
+        
         font-size: 14px;
         line-height: 1.5;
     }
@@ -189,11 +190,17 @@ footer {
         width: 100%;
         height: auto;
         object-fit: cover;
-        position: relative;
+       
     }
 
     .right-box {
         font-size: 13px;
+    }
+    .left-box {
+        width: 100%;
+        flex-direction: row;  
+        justify-content: space-between;
+        gap: 14px;
     }
 }
 
@@ -336,4 +343,5 @@ footer {
         </div>
     </footer>
 </body>
+
 </html>
